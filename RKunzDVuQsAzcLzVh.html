@@ -1,0 +1,225 @@
+<html><head><base href="." /><title>FreelancePro - Your Path to Online Income</title>
+<style>
+:root {
+  --primary: #2c3e50;
+  --secondary: #3498db;
+  --accent: #e74c3c;
+  --light: #ecf0f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--light);
+}
+
+.header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.money-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.dollar {
+  position: absolute;
+  animation: fall 3s linear infinite;
+  color: #27ae60;
+  opacity: 0.3;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-20px) rotate(0deg); }
+  100% { transform: translateY(120px) rotate(360deg); }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.income-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.method-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.method-card:hover {
+  transform: translateY(-5px);
+}
+
+.method-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  background: var(--secondary);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background: #2980b9;
+}
+
+.earnings-tracker {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.progress-bar {
+  height: 20px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.progress {
+  height: 100%;
+  background: var(--secondary);
+  width: 0%;
+  transition: width 1s ease;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+  <div class="money-rain" id="moneyRain"></div>
+  <h1>FreelancePro</h1>
+  <p>Your Gateway to Financial Freedom</p>
+</header>
+
+<div class="container">
+  <div class="earnings-tracker">
+    <h2>Your Earnings Goal</h2>
+    <div class="progress-bar">
+      <div class="progress" id="progressBar"></div>
+    </div>
+    <p>Current Progress: $<span id="currentEarnings">0</span> / $<span id="goalAmount">1000</span></p>
+  </div>
+
+  <div class="income-methods">
+    <div class="method-card">
+      <svg class="method-icon" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M20,4H4C2.89,4 2,4.89 2,6V18C2,19.11 2.89,20 4,20H20C21.11,20 22,19.11 22,18V6C22,4.89 21.11,4 20,4M20,18H4V12H20V18M20,8H4V6H20V8M13,17H15V13H13V17M9,17H11V13H9V17Z"/>
+      </svg>
+      <h3>Freelance Writing</h3>
+      <p>Earn $50-$200 per article writing content for blogs and businesses.</p>
+      <a href="https://www.upwork.com" class="cta-button">Start Writing</a>
+    </div>
+
+    <div class="method-card">
+      <svg class="method-icon" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12,19.2C9.5,19.2 7.29,17.92 6,16C6.03,14 10,13 12,13C14,13 17.97,14 18,16C16.71,17.92 14.5,19.2 12,19.2M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z"/>
+      </svg>
+      <h3>Web Development</h3>
+      <p>Build websites and apps for clients. Average project: $500-$5000</p>
+      <a href="https://www.freelancer.com" class="cta-button">Find Projects</a>
+    </div>
+
+    <div class="method-card">
+      <svg class="method-icon" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
+      </svg>
+      <h3>Online Teaching</h3>
+      <p>Share your knowledge and earn $20-$50 per hour teaching online.</p>
+      <a href="https://www.teachable.com" class="cta-button">Start Teaching</a>
+    </div>
+  </div>
+</div>
+
+<script>
+// Create falling money animation
+function createMoneyRain() {
+  const moneyRain = document.getElementById('moneyRain');
+  const symbols = ['$', '€', '£', '¥'];
+  
+  setInterval(() => {
+    const dollar = document.createElement('span');
+    dollar.className = 'dollar';
+    dollar.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    dollar.style.left = Math.random() * 100 + '%';
+    dollar.style.fontSize = (Math.random() * 20 + 10) + 'px';
+    moneyRain.appendChild(dollar);
+    
+    setTimeout(() => {
+      dollar.remove();
+    }, 3000);
+  }, 200);
+}
+
+// Simulate earning progress
+let currentEarnings = 0;
+const goalAmount = 1000;
+const progressBar = document.getElementById('progressBar');
+const currentEarningsSpan = document.getElementById('currentEarnings');
+const goalAmountSpan = document.getElementById('goalAmount');
+
+function updateEarnings() {
+  if (currentEarnings < goalAmount) {
+    currentEarnings += Math.random() * 50;
+    if (currentEarnings > goalAmount) currentEarnings = goalAmount;
+    
+    const progress = (currentEarnings / goalAmount) * 100;
+    progressBar.style.width = progress + '%';
+    currentEarningsSpan.textContent = Math.round(currentEarnings);
+    goalAmountSpan.textContent = goalAmount;
+  }
+}
+
+// Initialize animations and updates
+createMoneyRain();
+setInterval(updateEarnings, 3000);
+
+// Add hover effects to method cards
+document.querySelectorAll('.method-card').forEach(card => {
+  card.addEventListener('mouseover', () => {
+    card.style.transform = 'translateY(-10px)';
+  });
+  
+  card.addEventListener('mouseout', () => {
+    card.style.transform = 'translateY(0)';
+  });
+});
+</script>
+
+</body></html>
